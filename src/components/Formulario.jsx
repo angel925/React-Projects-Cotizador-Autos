@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { obtenerDiferenciaYear, calcularMarca, obtenerPlan } from "../helper";
+import PropType from 'prop-types'
 
 const Campo = styled.div`
   display: flex;
@@ -123,7 +124,7 @@ const Formulario = ({ guardarResumen, guardarCargando }) => {
 
       //Se pasa los datos al componente principal app
       guardarResumen({
-        cotizacion: resultado,
+        cotizacion: Number(resultado),
         datos,
       });
     }, 2000);
@@ -186,5 +187,11 @@ const Formulario = ({ guardarResumen, guardarCargando }) => {
     </form>
   );
 };
+
+Formulario.propTypes = {
+
+  guardarResumen: PropType.func.isRequired,
+  guardarCargando:PropType.func.isRequired
+}
 
 export default Formulario;

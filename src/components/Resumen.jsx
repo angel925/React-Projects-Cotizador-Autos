@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import {primeraMayuscula}  from '../helper'
+import PropType from 'prop-types'
 
 const Contenedor = styled.div`
   max-width: 600px;
@@ -32,5 +33,10 @@ const Resumen = ({ datos }) => {
     </Contenedor>
   );
 };
+
+Resumen.propTypes  = {
+
+  datos: PropType.object.isRequired
+}
 
 export default Resumen;
